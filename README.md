@@ -49,6 +49,7 @@ original público?
 Pense bem: Qual a diferença entre dar a alguém uma CÓPIA de um documento seu, e entregar o docum
 ento ORIGINAL para a pessoa rasurar? "
 **Sua Resposta:**
+
 Deixar os métodos getSaldo() e getNome() públicos é seguro porque eles permitem consultar os dados sem alterar os valores originais. É como entregar uma cópia de um documento, que pode ser lida sem correr o risco de modificar o original. Já deixar os atributos públicos seria como entregar o documento original para qualquer pessoa rasurar. Por isso, o encapsulamento protege os dados contra alterações indevidas e ajuda a manter a segurança e a organização do sistema.
 ---
 ### Aula 4 - Construtores
@@ -65,7 +66,8 @@ istema de fraudes e falhas de lógica?"
 _Dica: Pense sobre o que pode ou não mudar fisicamente em um carro, e a diferença entre "alterar
 um dado no banco" e "executar um processo real no Detran"_"
 **Sua Resposta:**
-[Escreva sua reflexão aqui]
+
+Gerar getters e setters para todos os atributos pode ser perigoso porque permite alterar dados sem respeitar as regras do sistema. No caso do veículo, não criar o `setModelo()` impede que o modelo seja alterado indevidamente, pois essa característica não muda depois que o carro é fabricado. Já deixar o `setPlaca()` privado e usar o método público `atualizarPlaca()` garante que a troca da placa passe por um processo de validação, como acontece no Detran. Assim, evitamos fraudes, alterações indevidas e erros de lógica, deixando o código mais seguro e organizado.
 ---
 ### Aula 5 - Associação
 **Pergunta:** ""No construtor da `Viagem`, nós exigimos o objeto inteiro \(`Passageiro solicitan
