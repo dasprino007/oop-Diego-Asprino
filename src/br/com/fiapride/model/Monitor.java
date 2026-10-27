@@ -11,12 +11,15 @@ public class Monitor {
 	// Este é para saber o modelo especifico do monitor
 	private String modelo;
 	
-	public Monitor(String modelo, String marca, int resolucaoEixoX, int resolucaoEixoY) {
-		setIsOn(isOn);
+	private Computador porta1;
+	
+	public Monitor(String modelo, String marca, int resolucaoEixoX, int resolucaoEixoY, Computador porta1) {
+		setIsOn(false);
 		this.setMarca(marca);
 		this.setResolucaoEixoX(resolucaoEixoX);
 		this.setResolucaoEixoY(resolucaoEixoY);
 		this.setModelo(modelo);
+		this.setPorta1(porta1);
 	}
 	
 	public void ligarMonitor() {
@@ -26,7 +29,10 @@ public class Monitor {
 		}
 		
 		System.out.println(this.modelo + " ligou!!!");
-		setIsOn(isOn);
+		if (!this.porta1.isOn()) {
+			System.out.println("Não a nenhum computador ligado");
+		}
+		setIsOn(true);
 	}
 	
 	public void desligarMonitor() {
@@ -35,8 +41,12 @@ public class Monitor {
 			return;
 		}
 		
+		if (porta1 != null && !porta1.isOn()) {
+			System.out.println("O computador ainda esta ligado!!!!!");
+		}
+		
 		System.out.println(this.modelo + " desligou!!!");
-		setIsOn(isOn);
+		setIsOn(false);
 	}
 	
 	private void setIsOn(boolean isOn) {
@@ -106,6 +116,34 @@ public class Monitor {
 			return;
 		}
 		
-		this.modelo = marca;
+		this.modelo = modelo;
+	}
+
+	public Computador getPorta1() {
+		return porta1;
+	}
+
+	private void setPorta1(Computador porta1) {
+		this.porta1 = porta1;
+	}
+	
+	public void conectarPorta1(Computador porta) {
+		if(getPorta1() != null) {
+			System.err.println("A porta 1 ja esta conectada!!!");
+			return;
+		}
+		
+		System.out.println("Porta 1 conectada com computador "+ porta.getHostname());
+		setPorta1(porta);
+	}
+	
+	public void desconectarPorta1() {
+		if(getPorta1() == null) {
+			System.err.println("A porta 1 ja esta aberta!!!");
+			return;
+		}
+		
+		System.out.println("Porta 1 desconectada");
+		setPorta1(null);
 	}
 }

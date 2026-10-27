@@ -78,7 +78,8 @@ _Pense nas regras de negócio: O que acontece na hora que a Viagem acaba e o sis
 ontar o saldo? Se a Viagem tiver apenas a String "Ana Silva", ela consegue mexer no dinheiro del
 a? _"
 **Sua Resposta:**
-[Escreva sua reflexão aqui]
+
+Pedir o objeto inteiro `Passageiro` é melhor porque a viagem precisa acessar os dados e os métodos do passageiro, como descontar o saldo quando a viagem terminar. Se usássemos apenas uma `String` com o nome, teríamos somente o texto "Ana Silva", sem acesso ao saldo ou aos métodos da pessoa. Assim, a associação entre `Viagem` e `Passageiro` permite executar as regras de negócio corretamente e manter o código organizado e seguro.
 ---
 ### Aula 6 - Herança
 **Pergunta:** ""No nosso código, a mãe `Veiculo` possui os atributos `placa` e `modelo` como `pr
