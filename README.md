@@ -12,7 +12,7 @@ desenvolvemos o sistema ........
 ---
 ## Checklist de Implementação
 - [x] Aula 1 - Classes e Objetos
-- [ ] Aula 2 - Métodos
+- [x] Aula 2 - Métodos
 - [ ] Aula 3 - Encapsulamento
 - [ ] Aula 4 - Construtores
 - [ ] Aula 5 - Associação
@@ -28,7 +28,6 @@ cil apenas criar variáveis soltas no main, como `String nomeAna = "Ana"` e `dou
 0.0`?
 **Pense:** E se o FiapRide tiver 1 milhão de usuários? Como a Classe ajuda a resolver isso?"
 **Sua Resposta:**
-[Escreva sua reflexão aqui - 5-10 linhas]
 Nós precisamos de classes porque elas são uma boa forma de padronizar e organizar o código. Imagine que nossa classe tivesse 20 atributos: sem ela, o desenvolvedor poderia esquecer de criar ou atualizar alguma variável. 
 
 Se o FiapRide tivesse 1 milhão de usuários, seria muito difícil controlar todas as variáveis separadamente e por exemplo iterações como loops seria quase impossivel que poderia ser importante para uma pesquisa de usuarios para este projeto. 
@@ -39,7 +38,9 @@ retamente no código principal, por que dá tanto trabalho criar um método espe
 cionarSaldo\(valor\)` para fazer isso? Quais seriam os riscos para a nossa startup de mobilidade
 se deixássemos qualquer programador alterar o saldo diretamente?"
 **Sua Resposta:**
-[Escreva sua reflexão aqui]
+Criar um método como adicionarSaldo(valor) ajuda a organizar e controlar melhor o código. Se qualquer programador pudesse alterar o saldo diretamente, poderiam ocorrer erros, como adicionar valores incorretos ou deixar o saldo negativo. 
+
+Com um método específico, podemos validar o valor antes de fazer a alteração e garantir que as regras do sistema sejam respeitadas. Isso também facilita a manutenção e evita repetir código em várias partes do programa.
 ---
 ### Aula 3 - Encapsulamento
 **Pergunta:** "No nosso código, os atributos são `private`, mas os métodos `getSaldo\(\)` e `get
