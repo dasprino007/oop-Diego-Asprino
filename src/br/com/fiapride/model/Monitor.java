@@ -1,23 +1,19 @@
 package br.com.fiapride.model;
 
-public class Monitor {
+public class Monitor extends Tela {
 	// Este atributo é para saber se esta ligado
 	private boolean isOn;
 	// Este atributo é para saber qual é sua marca  ex: lg, samsung e etc.
 	private String marca;
-	// Este é para saber qual resolução ex: 1920x1080
-	private int resolucaoEixoX;
-	private int resolucaoEixoY;
 	// Este é para saber o modelo especifico do monitor
 	private String modelo;
 	
 	private Computador porta1;
 	
-	public Monitor(String modelo, String marca, int resolucaoEixoX, int resolucaoEixoY, Computador porta1) {
+	public Monitor(String modelo, String marca, int resolucaoEixoX, int resolucaoEixoY, String tipoTela,Computador porta1) {
+		super(resolucaoEixoX, resolucaoEixoY, tipoTela);
 		setIsOn(false);
 		this.setMarca(marca);
-		this.setResolucaoEixoX(resolucaoEixoX);
-		this.setResolucaoEixoY(resolucaoEixoY);
 		this.setModelo(modelo);
 		this.setPorta1(porta1);
 	}
@@ -68,42 +64,6 @@ public class Monitor {
 		}
 		
 		this.marca = marca;
-	}
-
-	public int getResolucaoEixoX() {
-		return resolucaoEixoX;
-	}
-
-	private void setResolucaoEixoX(int resolucaoEixoX) {
-		int menorResolucaoX = 640;
-		
-		if(resolucaoEixoX < 0) {
-			System.err.println("Resolução do eixo X não pode ser menor que 0");
-			return;
-		}else if(resolucaoEixoX < menorResolucaoX) {
-			System.err.println("Resolução do eixo X não pode ser menor que " + menorResolucaoX);
-			return;
-		}
-		
-		this.resolucaoEixoX = resolucaoEixoX;
-	}
-
-	public int getResolucaoEixoY() {
-		return resolucaoEixoY;
-	}
-
-	private void setResolucaoEixoY(int resolucaoEixoY) {
-		int menorResolucaoY = 480;
-		
-		if(resolucaoEixoY < 0) {
-			System.err.println("Resolução do eixo Y não pode ser menor que 0");
-			return;
-		}else if(resolucaoEixoY < menorResolucaoY) {
-			System.err.println("Resolução do eixo Y não pode ser menor que " + menorResolucaoY);
-			return;
-		}
-		
-		this.resolucaoEixoY = resolucaoEixoY;
 	}
 	
 	public String getModelo() {

@@ -89,7 +89,8 @@ aca\(\)`.
 Por que o Java não deixa a filha alterar as variáveis privadas da mãe diretamente? Qual o princí
 pio das aulas passadas que isso está protegendo?""
 **Sua Resposta:**
-[Escreva sua reflexão aqui]
+
+O Java não permite que a classe filha acesse diretamente os atributos private da classe mãe porque isso faz parte do princípio do encapsulamento. Esse princípio protege os dados contra alterações indevidas e garante que eles sejam modificados de forma controlada, por meio de construtores ou métodos específicos, como super() ou setPlaca(). Assim, mantemos a segurança e a organização do código, respeitando as regras definidas na classe mãe.
 ---
 ### Aula 7 - Polimorfismo
 **Pergunta:** "No nosso loop `for \(Veiculo veiculo : frota\)`, a variável `veiculo` é do tipo g

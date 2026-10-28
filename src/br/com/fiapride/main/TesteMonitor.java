@@ -2,6 +2,7 @@ package br.com.fiapride.main;
 
 import br.com.fiapride.model.Computador;
 import br.com.fiapride.model.Monitor;
+import br.com.fiapride.model.Televisao;
 
 public class TesteMonitor {
 
@@ -10,7 +11,13 @@ public class TesteMonitor {
         // Teste da minha classe, desafio
 		Computador computador = new Computador("DESKTOP-OURO", "intel i5 10400f", "rx 9600xt");
 		Computador computador1 = new Computador("Desktop", "i3-10400f", "rtx 3050");
-        Monitor monitor1 = new Monitor("LG UltraGear","LG", 1920, 1080, computador);
+        Monitor monitor1 = new Monitor("LG UltraGear","LG", 1920, 1080, "lcd", computador);
+        Televisao televisao = new Televisao(1920, 1080, "plasma", 0);
+        
+        // Isso para acontecer um erro
+        // televisao.mudarCanal(100);
+        televisao.ligarTelevisao();
+        televisao.mudarCanal(500);
         
         System.out.println("Este monitor é da marca da " + monitor1.getMarca());
         

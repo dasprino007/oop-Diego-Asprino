@@ -55,6 +55,7 @@ public class Computador {
 
 	public boolean isOn() {
 		return isOn;
+		
 	}
 
 	private void setOn(boolean isOn) {
