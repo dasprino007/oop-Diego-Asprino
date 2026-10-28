@@ -98,7 +98,8 @@ enérico `Veiculo`. Se esquecêssemos de criar o método `calcularAutonomia\(\)`
 Veiculo`, nós conseguiríamos chamá-lo dentro do loop, mesmo sabendo que ele existe dentro do `Ca
 rro` e da `Moto`? Por que o contrato precisa existir na base da hierarquia?"
 **Sua Resposta:**
-[Escreva sua reflexão aqui]
+
+Não conseguiríamos chamar o método `calcularAutonomia()` pelo tipo `Veiculo` se ele não existisse na classe mãe, mesmo que estivesse implementado em `Carro` e `Moto`. O contrato precisa existir na classe base para garantir que todos os veículos tenham esse método, permitindo que cada um calcule sua autonomia de forma diferente. Isso aplica o polimorfismo, facilita a manutenção e permite adicionar novos tipos de veículos sem precisar alterar o loop principal.
 ---
 ### Aula 8 - Classes Abstratas
 **Pergunta:** "Pense no mundo real: Faz sentido existir um objeto que é APENAS 'Veículo' sem ser

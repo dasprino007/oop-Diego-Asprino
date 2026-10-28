@@ -1,8 +1,6 @@
 package br.com.fiapride.model;
 
 public class Monitor extends Tela {
-	// Este atributo é para saber se esta ligado
-	private boolean isOn;
 	// Este atributo é para saber qual é sua marca  ex: lg, samsung e etc.
 	private String marca;
 	// Este é para saber o modelo especifico do monitor
@@ -12,14 +10,15 @@ public class Monitor extends Tela {
 	
 	public Monitor(String modelo, String marca, int resolucaoEixoX, int resolucaoEixoY, String tipoTela,Computador porta1) {
 		super(resolucaoEixoX, resolucaoEixoY, tipoTela);
-		setIsOn(false);
+		setOn(false);
 		this.setMarca(marca);
 		this.setModelo(modelo);
 		this.setPorta1(porta1);
 	}
 	
-	public void ligarMonitor() {
-		if(getIsOn()) {
+	@Override
+	public void ligar() {
+		if(isOn()) {
 			System.err.println("Este monitor ja esta ligado");
 			return;
 		}
@@ -28,11 +27,12 @@ public class Monitor extends Tela {
 		if (!this.porta1.isOn()) {
 			System.out.println("Não a nenhum computador ligado");
 		}
-		setIsOn(true);
+		setOn(true);
 	}
 	
-	public void desligarMonitor() {
-		if(!getIsOn()) {
+	@Override
+	public void desligar() {
+		if(!isOn()) {
 			System.err.println("Este monitor ja esta desligado");
 			return;
 		}
@@ -42,16 +42,9 @@ public class Monitor extends Tela {
 		}
 		
 		System.out.println(this.modelo + " desligou!!!");
-		setIsOn(false);
+		setOn(false);
 	}
 	
-	private void setIsOn(boolean isOn) {
-		this.isOn = isOn;
-	}
-	
-	public boolean getIsOn() {
-		return this.isOn;
-	}
 	
 	public String getMarca() {
 		return marca;

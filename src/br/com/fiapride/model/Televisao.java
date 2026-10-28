@@ -3,7 +3,6 @@ package br.com.fiapride.model;
 public class Televisao extends Tela {
 	// Numero do canal exemplo: 101
 	private int numCanal;
-	private boolean isOn;
 	
 	public Televisao(int resolucaoEixoX, int resolucaoEixoY, String tipoTela, int numCanal) {
 		super(resolucaoEixoX, resolucaoEixoY, tipoTela);
@@ -34,7 +33,8 @@ public class Televisao extends Tela {
 		this.numCanal = numCanal;
 	}
 	
-	public void ligarTelevisao() {
+	@Override
+	public void ligar() {
 		if(isOn()) {
 			System.err.println("A TV ja esta ligado");
 			return;
@@ -44,7 +44,8 @@ public class Televisao extends Tela {
 		setOn(true);
 	}
 	
-	public void desligarTelevisao() {
+	@Override
+	public void desligar() {
 		if(!isOn()) {
 			System.err.println("A TV ja esta desligado");
 			return;
@@ -52,13 +53,5 @@ public class Televisao extends Tela {
 		
 		System.out.println("A TV desligou!!!");
 		setOn(false);
-	}
-	
-	public boolean isOn() {
-		return isOn;
-	}
-
-	private void setOn(boolean isOn) {
-		this.isOn = isOn;
 	}
 }

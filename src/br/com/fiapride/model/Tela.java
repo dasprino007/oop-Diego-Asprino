@@ -4,6 +4,7 @@ public class Tela {
 	// Este é para saber qual resolução ex: 1920x1080
 	private int resolucaoEixoX;
 	private int resolucaoEixoY;
+	private boolean isOn;
 	
 	// tipo com lcd, touch, plasma e etc.
 	private String tipoTela;
@@ -25,5 +26,21 @@ public class Tela {
 
 	public String getTipoTela() {
 		return tipoTela;
+	}
+
+	public boolean isOn() {
+		return isOn;
+	}
+
+	protected void setOn(boolean isOn) {
+		this.isOn = isOn;
+	}
+
+	public void ligar() {		
+		setOn(true);
+	}
+	
+	public void desligar() {
+		setOn(false);
 	}
 }
