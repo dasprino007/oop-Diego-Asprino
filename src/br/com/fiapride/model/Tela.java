@@ -1,48 +1,56 @@
+
 package br.com.fiapride.model;
 
-public abstract class Tela {
-	// Este é para saber qual resolução ex: 1920x1080
-	private int resolucaoEixoX;
-	private int resolucaoEixoY;
-	private boolean isOn;
-	
-	// tipo com lcd, touch, plasma e etc.
-	private String tipoTela;
-	
-	// Coloquei em privado para que o usuario não possa estanciar
-	public Tela(int resolucaoEixoX, int resolucaoEixoY, String tipoTela) {
-		this.resolucaoEixoX = resolucaoEixoX;
-		this.resolucaoEixoX = resolucaoEixoY;
-		this.tipoTela = tipoTela;
-	}
+public abstract class Tela implements Conectavel {
 
-	public int getResolucaoEixoX() {
-		return resolucaoEixoX;
-	}
+    private int resolucaoEixoX;
+    private int resolucaoEixoY;
+    private boolean isOn;
+    private String tipoTela;
 
-	public int getResolucaoEixoY() {
-		return resolucaoEixoY;
-	}
+    public Tela(int resolucaoEixoX, int resolucaoEixoY, String tipoTela) {
+        this.resolucaoEixoX = resolucaoEixoX;
+        this.resolucaoEixoY = resolucaoEixoY;
+        this.tipoTela = tipoTela;
+    }
 
-	public String getTipoTela() {
-		return tipoTela;
-	}
+    public int getResolucaoEixoX() {
+        return resolucaoEixoX;
+    }
 
-	public boolean isOn() {
-		return isOn;
-	}
+    public int getResolucaoEixoY() {
+        return resolucaoEixoY;
+    }
 
-	protected void setOn(boolean isOn) {
-		this.isOn = isOn;
-	}
+    public String getTipoTela() {
+        return tipoTela;
+    }
 
-	public void ligar() {		
-		setOn(true);
-	}
-	
-	public void desligar() {
-		setOn(false);
-	}
-	
-	abstract public String conectorTipo();
+    public boolean isOn() {
+        return isOn;
+    }
+
+    protected void setOn(boolean isOn) {
+        this.isOn = isOn;
+    }
+
+    public void ligar() {
+        setOn(true);
+    }
+
+    public void desligar() {
+        setOn(false);
+    }
+
+    @Override
+    public String conectar() {
+        return "Tela conectada!";
+    }
+
+    @Override
+    public String desconectar() {
+        return "Tela desconectada!";
+    }
+
+    public abstract String conectorTipo();
 }

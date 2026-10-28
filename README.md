@@ -114,27 +114,33 @@ eiculo\(\)` e quebrar a lógica do nosso sistema?"
 Precisamos declarar `Veiculo` como `abstract` porque ela representa um conceito genérico, e não um veículo específico. O Java não deduz isso sozinho, pois precisamos indicar explicitamente essa regra no código. Se esquecermos o `abstract`, será possível criar um objeto com `new Veiculo()`, mesmo que isso não faça sentido para o nosso sistema. Assim, a classe abstrata impede a criação de veículos genéricos e garante que sejam criados apenas veículos específicos, como `Carro` e `Moto`, protegendo a lógica do sistema.
 ---
 ### Aula 9 - Interfaces
-**Pergunta:** "Por que Java permite herança simples \(apenas uma mãe\), mas múltipla implementaç
-ão de interfaces \(vários contratos\)?
-Pense: Se `CarroEletrico` pudesse herdar de `Veiculo` E de `Bateria` ao mesmo tempo \(herança mú
-ltipla\), o que aconteceria se AMBAS as mães tivessem um método chamado `ligar\(\)`?
-Como as interfaces resolvem esse problema? "
-**Sua Resposta:**
-[Escreva sua reflexão aqui]
----
+
+Java permite herdar de apenas uma classe para evitar conflitos, como quando duas classes mães possuem um método com o mesmo nome, como `ligar()`, mas com comportamentos diferentes. As interfaces permitem implementar vários contratos sem esse problema, pois a classe define como cada método será executado. Assim, o `CarroEletrico` pode herdar de `Veiculo` e implementar interfaces como `Bateria`, mantendo o código organizado, flexível e fácil de manter.
+
 ## Desafios Técnicos Implementados
-### Desafio Pessoal (Seu Projeto)
-**Qual foi o domínio que você escolheu para seu projeto pessoal?**
-[Responda aqui: ex: Sistema de Biblioteca, Playlist de Música, PetShop, etc.]
-**Quais classes você criou?**
-[Liste suas classes: ex: Livro, Usuario, Emprestimo]
-**Qual foi o maior desafio técnico que você enfrentou?**
-[Descreva o desafio e como você o resolveu - 10-15 linhas]
----
+
+Qual foi o domínio que você escolheu para seu projeto pessoal?
+
+Sistema de mobilidade urbana.
+
+Quais classes você criou?
+
+`Monitor`, `Tela`, `Televisão`, `Impressora` e `CaixaSom`.
+
+Qual foi o maior desafio técnico que você enfrentou?
+
+Meu maior desafio foi entender como aplicar os conceitos de orientação a objetos no projeto. Tive dificuldade em compreender como funcionam a herança, o encapsulamento e o polimorfismo. Para resolver isso, estudei os exemplos das aulas e pratiquei a criação de classes e métodos. Também aprendi a utilizar construtores para inicializar os objetos corretamente. Outra dificuldade foi entender como associar um passageiro a uma viagem. Percebi que passar o objeto inteiro permite acessar seus dados e métodos. Com isso, ficou mais fácil aplicar as regras de negócio. Aos poucos, consegui organizar melhor o código. Aprendi também a proteger os atributos usando `private`. Esse processo me ajudou a compreender melhor a importância de escrever um código seguro, organizado e fácil de manter.
+
 ## Conclusão
-**O que você aprendeu nestas 9 aulas?**
-[Reflexão final - conte sobre sua jornada de aprendizado]
-**Qual conceito foi mais difícil de entender?**
-[Qual conceito e como você superou a dificuldade?]
-**O que você melhoraria no seu projeto se pudesse refazer?**
-[Reflexão crítica sobre seu próprio código]
+
+O que você aprendeu nestas 9 aulas?
+
+Aprendi os principais conceitos da programação orientada a objetos em Java, como classes, objetos, métodos, encapsulamento, construtores, associação, herança, polimorfismo, classes abstratas e interfaces. Entendi como esses conceitos ajudam a organizar o código, proteger os dados e facilitar a manutenção do sistema.
+
+Qual conceito foi mais difícil de entender?
+
+O conceito mais difícil foi o polimorfismo, porque precisei entender como objetos de classes diferentes podem ser tratados pelo mesmo tipo de referência e executar métodos de maneiras diferentes. Consegui compreender melhor estudando os exemplos de veículos e praticando o uso de métodos sobrescritos.
+
+O que você melhoraria no seu projeto se pudesse refazer?
+
+Eu melhoraria a organização do código, criaria mais métodos para validar os dados e aplicaria melhor os conceitos de encapsulamento e interfaces. Também adicionaria novas funcionalidades ao sistema de mobilidade, como cálculo do valor da viagem e validação do saldo do passageiro, tornando o projeto mais completo, seguro e próximo de um sistema real.
