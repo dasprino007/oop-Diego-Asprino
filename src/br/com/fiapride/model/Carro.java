@@ -8,7 +8,14 @@ public class Carro extends Veiculo {
         super(placa, modelo);
         this.setCapacidadePassageiros(4);
     }
-
+    
+    // @Override NÃO é opcional aqui!
+    // Se não implementarmos, o Java dá erro de compilação
+    @Override
+    public void exibirTipo() {
+        System.out.println("Sou um Carro");
+    }
+    
     public int getCapacidadePassageiros() {
         return this.capacidadePassageiros;
     }

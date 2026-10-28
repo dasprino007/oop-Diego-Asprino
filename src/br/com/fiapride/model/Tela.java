@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Tela {
+public abstract class Tela {
 	// Este é para saber qual resolução ex: 1920x1080
 	private int resolucaoEixoX;
 	private int resolucaoEixoY;
@@ -43,4 +43,6 @@ public class Tela {
 	public void desligar() {
 		setOn(false);
 	}
+	
+	abstract public String conectorTipo();
 }

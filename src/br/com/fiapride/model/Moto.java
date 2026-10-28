@@ -8,6 +8,11 @@ public class Moto extends Veiculo {
         super(placa, modelo);
     }
     
+    @Override
+    public void exibirTipo() {
+        System.out.println("Sou uma Moto");
+    }
+    
     public void setIsEletrica (boolean isEletrica) {
         this.isEletrica = isEletrica;
     }

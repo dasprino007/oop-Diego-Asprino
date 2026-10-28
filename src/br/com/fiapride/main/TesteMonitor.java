@@ -19,6 +19,7 @@ public class TesteMonitor {
         for (Tela tela : telas) {
             System.out.println("Tela: " + tela.isOn());
             tela.ligar();
+            System.out.println("Tipo de entrada: " + tela.conectorTipo());
         }
        }
 

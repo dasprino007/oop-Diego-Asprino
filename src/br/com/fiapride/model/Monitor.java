@@ -99,4 +99,9 @@ public class Monitor extends Tela {
 		System.out.println("Porta 1 desconectada");
 		setPorta1(null);
 	}
+	
+	@Override
+	public String conectorTipo() {
+		return "DISPLAY-PORT";
+	}
 }

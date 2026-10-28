@@ -54,4 +54,9 @@ public class Televisao extends Tela {
 		System.out.println("A TV desligou!!!");
 		setOn(false);
 	}
+	
+	@Override
+	public String conectorTipo() {
+		return "HDMI";
+	}
 }

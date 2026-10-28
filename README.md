@@ -110,7 +110,8 @@ or que ele não deduz isso sozinho?
 Pense: Se esquecermos de colocar `abstract`, qual o risco que corremos? Alguém pode criar `new V
 eiculo\(\)` e quebrar a lógica do nosso sistema?"
 **Sua Resposta:**
-[Escreva sua reflexão aqui]
+
+Precisamos declarar `Veiculo` como `abstract` porque ela representa um conceito genérico, e não um veículo específico. O Java não deduz isso sozinho, pois precisamos indicar explicitamente essa regra no código. Se esquecermos o `abstract`, será possível criar um objeto com `new Veiculo()`, mesmo que isso não faça sentido para o nosso sistema. Assim, a classe abstrata impede a criação de veículos genéricos e garante que sejam criados apenas veículos específicos, como `Carro` e `Moto`, protegendo a lógica do sistema.
 ---
 ### Aula 9 - Interfaces
 **Pergunta:** "Por que Java permite herança simples \(apenas uma mãe\), mas múltipla implementaç
